@@ -15,7 +15,7 @@ public class Car {
     }
 
     public boolean play() {
-        move.execute(Randoms.pickNumberInRange(1, 9));
+        move.execute(Randoms.pickNumberInRange(0, 9));
         location.apply(move.isMoved());
         return move.isMoved();
     }
