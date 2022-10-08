@@ -14,6 +14,9 @@ public class Move {
         if (number >= FORWARD_CRITERIA) {
             move();
         }
+        if (number < FORWARD_CRITERIA) {
+            stop();
+        }
     }
 
     public boolean isMoved() {
@@ -22,5 +25,9 @@ public class Move {
 
     public void move() {
         isMoved = true;
+    }
+
+    private void stop() {
+        isMoved = false;
     }
 }

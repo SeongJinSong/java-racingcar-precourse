@@ -9,7 +9,9 @@ public class Location {
     }
 
     public void apply(boolean result) {
-        this.x++;
+        if (result) {
+            this.x++;
+        }
     }
 
     public int getX() {

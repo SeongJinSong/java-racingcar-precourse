@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import java.util.Objects;
 
 public class Car {
     private final CarName carName;
@@ -17,5 +18,30 @@ public class Car {
         move.execute(Randoms.pickNumberInRange(1, 9));
         location.apply(move.isMoved());
         return move.isMoved();
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public CarName getCarName() {
+        return carName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Car car = (Car) o;
+        return carName.equals(car.carName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carName);
     }
 }
