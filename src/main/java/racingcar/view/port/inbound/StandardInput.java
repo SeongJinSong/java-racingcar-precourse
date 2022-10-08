@@ -1,4 +1,4 @@
-package racingcar.view.port.in;
+package racingcar.view.port.inbound;
 
 import camp.nextstep.edu.missionutils.Console;
 import javax.naming.OperationNotSupportedException;
