@@ -4,25 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Referee {
-    private final List<Car> winnerLIst = new ArrayList<>();
+    private final CarList winnerLIst;
 
-    public Referee(List<Car> carList) {
+    public Referee(CarList carList) {
         int max = 0;
-        for (Car car : carList) {
+        for (Car car : carList.getCarList()) {
             max = Math.max(car.getLocation().getX(), max);
         }
-        for (Car car : carList) {
-            confirmWinner(car, max);
+        List<Car> winners = new ArrayList<>();
+        for (Car car : carList.getCarList()) {
+            confirmWinner(car, max, winners);
         }
+        winnerLIst = new CarList(winners);
     }
 
-    private void confirmWinner(Car car, int max) {
+    private void confirmWinner(Car car, int max, List<Car> winners) {
         if (car.getLocation().getX() == max) {
-            winnerLIst.add(car);
+            winners.add(car);
         }
     }
 
-    public List<Car> getWinnerList() {
+    public CarList getWinnerList() {
         return this.winnerLIst;
     }
 }

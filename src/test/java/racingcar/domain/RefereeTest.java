@@ -27,13 +27,13 @@ public class RefereeTest {
         List<Car> carList = new ArrayList<>();
         carList.add(car);
         carList.add(car2);
-        Referee referee = new Referee(carList);
+        Referee referee = new Referee(new CarList(carList));
 
         //when
-        List<Car> winnerList = referee.getWinnerList();
+        CarList winnerList = referee.getWinnerList();
 
         //then
-        Assertions.assertThat(winnerList).contains(car2);
+        Assertions.assertThat(winnerList.getCarList()).contains(car2);
         mockUtils.close();
     }
 
@@ -50,13 +50,13 @@ public class RefereeTest {
         List<Car> carList = new ArrayList<>();
         carList.add(car);
         carList.add(car2);
-        Referee referee = new Referee(carList);
+        Referee referee = new Referee(new CarList(carList));
 
         //when
-        List<Car> winnerList = referee.getWinnerList();
+        CarList winnerList = referee.getWinnerList();
 
         //then
-        Assertions.assertThat(winnerList).contains(car, car2);
+        Assertions.assertThat(winnerList.getCarList()).contains(car, car2);
         mockUtils.close();
     }
 }

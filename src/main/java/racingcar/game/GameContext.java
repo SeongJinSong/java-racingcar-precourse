@@ -1,7 +1,6 @@
 package racingcar.game;
 
-import java.util.List;
-import racingcar.domain.Car;
+import racingcar.domain.CarList;
 import racingcar.domain.Referee;
 import racingcar.game.status.Status;
 import racingcar.view.status.EnterCarNameList;
@@ -10,7 +9,7 @@ public class GameContext {
     Status status = new EnterCarNameList();
     Referee referee;
     private String carNameList;
-    private List<Car> carList;
+    private CarList carList;
     private String retryReadLine;
     private int retryCount;
     private int stepCount = 0;
@@ -27,11 +26,11 @@ public class GameContext {
         this.carNameList = carNameList;
     }
 
-    public List<Car> getCarList() {
+    public CarList getCarList() {
         return carList;
     }
 
-    public void setCarList(List<Car> carList) {
+    public void setCarList(CarList carList) {
         this.carList = carList;
     }
 
@@ -59,7 +58,7 @@ public class GameContext {
         stepCount++;
     }
 
-    public List<Car> judge(List<Car> carList) {
+    public CarList judge(CarList carList) {
         referee = new Referee(carList);
         return referee.getWinnerList();
     }

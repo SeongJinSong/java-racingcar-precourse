@@ -10,7 +10,7 @@ public class GameStep implements Status {
 
     @Override
     public Status next(GameContext gameContext) {
-        for (Car car : gameContext.getCarList()) {
+        for (Car car : gameContext.getCarList().getCarList()) {
             car.play();
             StandardOutput.println(getCarNameAndLocation(car));
         }

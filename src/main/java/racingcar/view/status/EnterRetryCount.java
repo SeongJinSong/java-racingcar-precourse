@@ -1,7 +1,5 @@
 package racingcar.view.status;
 
-import java.util.List;
-import racingcar.domain.Car;
 import racingcar.game.GameContext;
 import racingcar.game.status.MakeRetryCount;
 import racingcar.game.status.Status;
@@ -9,8 +7,6 @@ import racingcar.view.port.inbound.StandardInput;
 import racingcar.view.port.outbound.StandardOutput;
 
 public class EnterRetryCount implements Status {
-
-
     @Override
     public Status next(GameContext gameContext) {
         StandardOutput.println("시도할 회수");

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class StandardInputTest {
     @Test
     @DisplayName("StandardInput Instance 를 만들지 못하는지 확인")
-    void instance_new_test(){
+    void instance_new_test() {
         Class<StandardInput> standardInputClass = StandardInput.class;
         Constructor<?>[] declaredConstructors = standardInputClass.getDeclaredConstructors();
 

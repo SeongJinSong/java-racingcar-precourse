@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class LocationTest {
     @Test
     @DisplayName("Location 이 정상 증가하는지 확인")
-    void increase_test(){
+    void increase_test() {
         Location location = new Location();
         location.apply(true);
         assertThat(location.getX()).isEqualTo(1);
@@ -17,7 +17,7 @@ public class LocationTest {
 
     @Test
     @DisplayName("Location x값 정상적으로 print 하는지 확인")
-    void print_test(){
+    void print_test() {
         Location location = new Location();
         location.apply(true);
         assertThat(location.print()).isEqualTo("-");

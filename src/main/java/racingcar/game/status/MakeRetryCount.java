@@ -1,7 +1,5 @@
 package racingcar.game.status;
 
-import java.util.List;
-import racingcar.domain.Car;
 import racingcar.game.GameContext;
 import racingcar.view.port.outbound.StandardOutput;
 import racingcar.view.status.EnterRetryCount;

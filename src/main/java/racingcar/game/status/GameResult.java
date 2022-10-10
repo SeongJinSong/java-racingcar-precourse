@@ -2,7 +2,7 @@ package racingcar.game.status;
 
 import java.util.List;
 import racingcar.domain.Car;
-import racingcar.domain.Referee;
+import racingcar.domain.CarList;
 import racingcar.game.GameContext;
 import racingcar.view.port.outbound.StandardOutput;
 
@@ -12,8 +12,8 @@ public class GameResult implements Status {
 
     @Override
     public Status next(GameContext gameContext) {
-        List<Car> winnerList = gameContext.judge(gameContext.getCarList());
-        StandardOutput.println(RESULT_PREFIX + makeResult(winnerList));
+        CarList winnerList = gameContext.judge(gameContext.getCarList());
+        StandardOutput.println(RESULT_PREFIX + makeResult(winnerList.getCarList()));
         return new Exit();
     }
 
